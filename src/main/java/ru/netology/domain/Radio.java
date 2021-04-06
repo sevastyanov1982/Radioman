@@ -10,14 +10,6 @@ public class Radio {
     }
 
     public void setStationNumber(int stationNumber) {
-        if (stationNumber > 9) {
-            this.stationNumber = 9;
-            return;
-        }
-        if (stationNumber < 9) {
-            this.stationNumber = 0;
-            return;
-        }
         this.stationNumber = stationNumber;
     }
 
