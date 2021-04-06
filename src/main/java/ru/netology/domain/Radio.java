@@ -4,13 +4,23 @@ public class Radio {
     private int stationNumber;
     private int volume;
 
+
     public int getStationNumber() {
         return stationNumber;
     }
 
     public void setStationNumber(int stationNumber) {
+        if (stationNumber > 9) {
+            this.stationNumber = 9;
+            return;
+        }
+        if (stationNumber < 9) {
+            this.stationNumber = 0;
+            return;
+        }
         this.stationNumber = stationNumber;
     }
+
     public int getVolume() {
         return volume;
     }
@@ -23,28 +33,33 @@ public class Radio {
         if (stationNumber == 9) { ///Проверяет, равны ли значения или нет, если да, тогда условие становится истинным и станция становится 0
             stationNumber = 0;
         } else {
-            stationNumber++;} ///увеличивает значение на 1
+            stationNumber++;
+        } ///увеличивает значение на 1
 
     }
+
     public void stationDown() {
         if (stationNumber == 0) {
             stationNumber = 9;
         } else {
-            stationNumber--;}
+            stationNumber--;
+        }
     }
 
     public void volumeUp() {
         if (volume == 10) {
             volume = 10;
         } else {
-            volume++;}
+            volume++;
+        }
     }
 
     public void volumeDown() {
         if (volume == 0) {
             volume = 0;
         } else {
-            volume--;}
+            volume--;
+        }
     }
 
 
